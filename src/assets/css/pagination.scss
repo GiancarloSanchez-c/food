@@ -1,0 +1,28 @@
+.container-pagination {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 100%;
+}
+.index {
+  cursor: pointer;
+  display: inline;
+  padding: 5px;
+  border:none;
+  border-radius: 20px;
+  background-color: #8040003f;
+  width: 35px;
+  height: 30px;
+  &:hover {
+    background-color: #c96a0a99;
+    transition: all 0.5s ease-in-out;
+  }
+}
+.index:active {
+  background-color: #8040003f;
+}
+.index:last-child {
+  margin: 12px;
+}

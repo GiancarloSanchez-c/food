@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Fragment } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import CreateRecipe from './components/CreateRecipe';
+import Home from './components/Home';
+import LandingPage from './components/LandingPage';
+import NotFound from './components/NotFound';
+import RecipeDetail from './components/RecipeDetail';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Fragment>
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+        <Route exact path="/home" component={Home} />
+        <Route exact path='/home/:id' component={RecipeDetail} />
+        <Route exact path="/create" component={CreateRecipe} />
+        <Route path='*' component={NotFound} />
+      </Switch>
+    </Fragment>
+  )
 }
 
-export default App;
+export default App
