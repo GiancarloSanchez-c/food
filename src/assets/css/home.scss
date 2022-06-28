@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Cardo:400i|Rubik:400,700&display=swap");
 $colorWhite: #fff;
 $backgroundCreate: #8040003f;
 $backgroundOrder: #d6e8c6;
@@ -11,31 +11,15 @@ $bp-xl: 1024px;
 :root {
   --d: 700ms;
   --e: cubic-bezier(0.19, 1, 0.22, 1);
-  --font-sans: 'Rubik', sans-serif;
-  --font-serif: 'Cardo', serif;
+  --font-sans: "Rubik", sans-serif;
+  --font-serif: "Cardo", serif;
 }
-
-@keyframes moveInBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-  }
-}
-/* .home-container {
-  background: url("https://images.pexels.com/photos/8978858/pexels-photo-8978858.jpeg?auto=compress&cs=tinysrgb&w=3260&h=2050&dpr=1") no-repeat;
-  background-size:100% 100%;
-} */
 
 .wrapper {
   display: flex;
   justify-content: space-around;
   .btn-white {
-    margin:0px 0px 30px 0px;
+    margin: 0px 0px 30px 0px;
     &:link {
       text-transform: uppercase;
       text-decoration: none;
@@ -94,12 +78,12 @@ $bp-xl: 1024px;
     animation: moveInBottom 3s ease-out;
     animation-fill-mode: backwards;
   }
-} 
+}
 .filter-select {
   display: flex;
   justify-content: space-around;
   .selected {
-    width: 15%;
+    width: 25%;
     background-color: $backgroundCreate;
     text-align: center;
     font-size: 1rem;
@@ -112,7 +96,6 @@ $bp-xl: 1024px;
     animation: moveInBottom 3s ease-out;
     animation-fill-mode: backwards;
   }
-  
 }
 .recipes {
   display: grid;
@@ -120,11 +103,11 @@ $bp-xl: 1024px;
   padding: 1rem;
   margin: 0 auto;
   font-family: var(--font-sans);
-  
+
   @media (min-width: $bp-sm) {
     grid-template-columns: repeat(1, 1fr);
   }
-  
+
   @media (min-width: $bp-lg) {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -185,9 +168,27 @@ $bp-xl: 1024px;
   height: auto;
 }
 
-
 @media screen and (max-width: 375px) {
- 
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 70px;
+  }
+  .filter-select {
+    display: flex;
+    position: relative;
+    top: 70px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .selected {
+      width: 77%;
+      margin: 15px 0;
+    }
+  }
   .orders {
     display: flex;
     justify-content: space-evenly;
@@ -198,4 +199,57 @@ $bp-xl: 1024px;
   .order {
     width: 100%;
   }
+}
+
+@media screen and (min-width: 376px) and (max-width:480px) {
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    top: 70px;
+  }
+  .filter-select {
+    display: flex;
+    position: relative;
+    top: 70px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .selected {
+      width: 77%;
+      margin: 15px 0;
+    }
+  }
+  .orders {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  .order {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .filter-select {
+   flex-wrap: wrap;
+    .selected {
+      width: 40%;
+      margin: 15px 0;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  .filter-select {
+     .selected {
+       width: 30%;
+       margin: 15px 0;
+     }
+   }
+
 }
