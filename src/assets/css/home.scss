@@ -103,14 +103,7 @@ $bp-xl: 1024px;
   padding: 1rem;
   margin: 0 auto;
   font-family: var(--font-sans);
-
-  @media (min-width: $bp-sm) {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  @media (min-width: $bp-lg) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .create,
@@ -169,6 +162,9 @@ $bp-xl: 1024px;
 }
 
 @media screen and (max-width: 375px) {
+  .recipes {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .wrapper {
     display: flex;
     justify-content: center;
@@ -201,7 +197,10 @@ $bp-xl: 1024px;
   }
 }
 
-@media screen and (min-width: 376px) and (max-width:480px) {
+@media screen and (min-width: 376px) and (max-width: 480px) {
+  .recipes {
+    grid-template-columns: repeat(1, 1fr);
+  }
   .wrapper {
     display: flex;
     justify-content: center;
@@ -236,7 +235,7 @@ $bp-xl: 1024px;
 
 @media screen and (min-width: 481px) and (max-width: 768px) {
   .filter-select {
-   flex-wrap: wrap;
+    flex-wrap: wrap;
     .selected {
       width: 40%;
       margin: 15px 0;
@@ -246,10 +245,9 @@ $bp-xl: 1024px;
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
   .filter-select {
-     .selected {
-       width: 30%;
-       margin: 15px 0;
-     }
-   }
-
+    .selected {
+      width: 30%;
+      margin: 15px 0;
+    }
+  }
 }
